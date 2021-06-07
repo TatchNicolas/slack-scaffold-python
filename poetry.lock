@@ -1,0 +1,42 @@
+[[package]]
+name = "slack-bolt"
+version = "1.6.1"
+description = "The Bolt Framework for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+slack-sdk = ">=3.5.0,<4"
+
+[package.extras]
+adapter = ["boto3 (<=2)", "moto (<2)", "bottle (>=0.12,<1)", "boddle (>=0.2,<0.3)", "chalice (>=1.22.4,<2)", "click (>=7,<8)", "CherryPy (>=18,<19)", "Django (>=3,<4)", "falcon (>=2,<3)", "fastapi (<1)", "Flask (>=1,<2)", "Werkzeug (<2)", "pyramid (>=1,<2)", "sanic (>=20,<21)", "starlette (>=0.13,<1)", "requests (>=2,<3)", "tornado (>=6,<7)", "uvicorn (<1)", "gunicorn (>=20,<21)", "websocket-client (>=0.57,<1)"]
+async = ["aiohttp (>=3,<4)", "websockets (>=8,<9)"]
+testing = ["pytest (>=5,<6)", "pytest-cov (>=2,<3)", "pytest-asyncio (<1)", "aiohttp (>=3,<4)", "Flask-Sockets (>=0.2,<1)", "Werkzeug (<2)", "black (==21.5b1)"]
+
+[[package]]
+name = "slack-sdk"
+version = "3.6.0"
+description = "The Slack API Platform SDK for Python"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.extras]
+optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=9.1,<10)", "websocket-client (>=0.57,<1)"]
+testing = ["pytest (>=5.4,<6)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=3,<4)", "black (==21.5b1)", "psutil (>=5,<6)", "databases (>=0.3)"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "5411fada18030427f4fb110872750e746e192eab4d16eec133e3e515e3796cae"
+
+[metadata.files]
+slack-bolt = [
+    {file = "slack_bolt-1.6.1-py2.py3-none-any.whl", hash = "sha256:3589b3c98c584256b3a8a4e64a3152db5b0f11e5b03cd9f441b29c9879323be8"},
+    {file = "slack_bolt-1.6.1.tar.gz", hash = "sha256:b0e6c18b74332c0cb3f4174ec7847fbfbbe4f8370f91bc8c006f0c9d01c05beb"},
+]
+slack-sdk = [
+    {file = "slack_sdk-3.6.0-py2.py3-none-any.whl", hash = "sha256:e1b257923a1ef88b8620dd3abff94dc5b3eee16ef37975d101ba9e60123ac3af"},
+    {file = "slack_sdk-3.6.0.tar.gz", hash = "sha256:195f044e02a2844579a7a26818ce323e85dde8de224730c859644918d793399e"},
+]
