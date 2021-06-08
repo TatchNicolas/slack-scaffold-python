@@ -1,4 +1,20 @@
 [[package]]
+name = "argh"
+version = "0.26.2"
+description = "An unobtrusive argparse wrapper with natural syntax"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyyaml"
+version = "5.4.1"
+description = "YAML parser and emitter for Python"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[[package]]
 name = "slack-bolt"
 version = "1.6.1"
 description = "The Bolt Framework for Python"
@@ -26,12 +42,62 @@ python-versions = ">=3.6.0"
 optional = ["aiodns (>1.0)", "aiohttp (>=3.7.3,<4)", "boto3 (<=2)", "SQLAlchemy (>=1,<2)", "websockets (>=9.1,<10)", "websocket-client (>=0.57,<1)"]
 testing = ["pytest (>=5.4,<6)", "pytest-asyncio (<1)", "Flask-Sockets (>=0.2,<1)", "pytest-cov (>=2,<3)", "codecov (>=2,<3)", "flake8 (>=3,<4)", "black (==21.5b1)", "psutil (>=5,<6)", "databases (>=0.3)"]
 
+[[package]]
+name = "watchdog"
+version = "2.1.2"
+description = "Filesystem events monitoring"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+argh = {version = ">=0.24.1", optional = true, markers = "extra == \"watchmedo\""}
+PyYAML = {version = ">=3.10", optional = true, markers = "extra == \"watchmedo\""}
+
+[package.extras]
+watchmedo = ["PyYAML (>=3.10)", "argh (>=0.24.1)"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "5411fada18030427f4fb110872750e746e192eab4d16eec133e3e515e3796cae"
+content-hash = "218fe543cea599ca8a9d896bb6cd1a64931a6197fe6310e3cc2d9e28ba8c6101"
 
 [metadata.files]
+argh = [
+    {file = "argh-0.26.2-py2.py3-none-any.whl", hash = "sha256:a9b3aaa1904eeb78e32394cd46c6f37ac0fb4af6dc488daa58971bdc7d7fcaf3"},
+    {file = "argh-0.26.2.tar.gz", hash = "sha256:e9535b8c84dc9571a48999094fda7f33e63c3f1b74f3e5f3ac0105a58405bb65"},
+]
+pyyaml = [
+    {file = "PyYAML-5.4.1-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:3b2b1824fe7112845700f815ff6a489360226a5609b96ec2190a45e62a9fc922"},
+    {file = "PyYAML-5.4.1-cp27-cp27m-win32.whl", hash = "sha256:129def1b7c1bf22faffd67b8f3724645203b79d8f4cc81f674654d9902cb4393"},
+    {file = "PyYAML-5.4.1-cp27-cp27m-win_amd64.whl", hash = "sha256:4465124ef1b18d9ace298060f4eccc64b0850899ac4ac53294547536533800c8"},
+    {file = "PyYAML-5.4.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:bb4191dfc9306777bc594117aee052446b3fa88737cd13b7188d0e7aa8162185"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:6c78645d400265a062508ae399b60b8c167bf003db364ecb26dcab2bda048253"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:4e0583d24c881e14342eaf4ec5fbc97f934b999a6828693a99157fde912540cc"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:72a01f726a9c7851ca9bfad6fd09ca4e090a023c00945ea05ba1638c09dc3347"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-manylinux2014_s390x.whl", hash = "sha256:895f61ef02e8fed38159bb70f7e100e00f471eae2bc838cd0f4ebb21e28f8541"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-win32.whl", hash = "sha256:3bd0e463264cf257d1ffd2e40223b197271046d09dadf73a0fe82b9c1fc385a5"},
+    {file = "PyYAML-5.4.1-cp36-cp36m-win_amd64.whl", hash = "sha256:e4fac90784481d221a8e4b1162afa7c47ed953be40d31ab4629ae917510051df"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:5accb17103e43963b80e6f837831f38d314a0495500067cb25afab2e8d7a4018"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:e1d4970ea66be07ae37a3c2e48b5ec63f7ba6804bdddfdbd3cfd954d25a82e63"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:cb333c16912324fd5f769fff6bc5de372e9e7a202247b48870bc251ed40239aa"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-manylinux2014_s390x.whl", hash = "sha256:fe69978f3f768926cfa37b867e3843918e012cf83f680806599ddce33c2c68b0"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-win32.whl", hash = "sha256:dd5de0646207f053eb0d6c74ae45ba98c3395a571a2891858e87df7c9b9bd51b"},
+    {file = "PyYAML-5.4.1-cp37-cp37m-win_amd64.whl", hash = "sha256:08682f6b72c722394747bddaf0aa62277e02557c0fd1c42cb853016a38f8dedf"},
+    {file = "PyYAML-5.4.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d2d9808ea7b4af864f35ea216be506ecec180628aced0704e34aca0b040ffe46"},
+    {file = "PyYAML-5.4.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:8c1be557ee92a20f184922c7b6424e8ab6691788e6d86137c5d93c1a6ec1b8fb"},
+    {file = "PyYAML-5.4.1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:fd7f6999a8070df521b6384004ef42833b9bd62cfee11a09bda1079b4b704247"},
+    {file = "PyYAML-5.4.1-cp38-cp38-manylinux2014_s390x.whl", hash = "sha256:bfb51918d4ff3d77c1c856a9699f8492c612cde32fd3bcd344af9be34999bfdc"},
+    {file = "PyYAML-5.4.1-cp38-cp38-win32.whl", hash = "sha256:fa5ae20527d8e831e8230cbffd9f8fe952815b2b7dae6ffec25318803a7528fc"},
+    {file = "PyYAML-5.4.1-cp38-cp38-win_amd64.whl", hash = "sha256:0f5f5786c0e09baddcd8b4b45f20a7b5d61a7e7e99846e3c799b05c7c53fa696"},
+    {file = "PyYAML-5.4.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:294db365efa064d00b8d1ef65d8ea2c3426ac366c0c4368d930bf1c5fb497f77"},
+    {file = "PyYAML-5.4.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:74c1485f7707cf707a7aef42ef6322b8f97921bd89be2ab6317fd782c2d53183"},
+    {file = "PyYAML-5.4.1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:d483ad4e639292c90170eb6f7783ad19490e7a8defb3e46f97dfe4bacae89122"},
+    {file = "PyYAML-5.4.1-cp39-cp39-manylinux2014_s390x.whl", hash = "sha256:fdc842473cd33f45ff6bce46aea678a54e3d21f1b61a7750ce3c498eedfe25d6"},
+    {file = "PyYAML-5.4.1-cp39-cp39-win32.whl", hash = "sha256:49d4cdd9065b9b6e206d0595fee27a96b5dd22618e7520c33204a4a3239d5b10"},
+    {file = "PyYAML-5.4.1-cp39-cp39-win_amd64.whl", hash = "sha256:c20cfa2d49991c8b4147af39859b167664f2ad4561704ee74c1de03318e898db"},
+    {file = "PyYAML-5.4.1.tar.gz", hash = "sha256:607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"},
+]
 slack-bolt = [
     {file = "slack_bolt-1.6.1-py2.py3-none-any.whl", hash = "sha256:3589b3c98c584256b3a8a4e64a3152db5b0f11e5b03cd9f441b29c9879323be8"},
     {file = "slack_bolt-1.6.1.tar.gz", hash = "sha256:b0e6c18b74332c0cb3f4174ec7847fbfbbe4f8370f91bc8c006f0c9d01c05beb"},
@@ -39,4 +105,23 @@ slack-bolt = [
 slack-sdk = [
     {file = "slack_sdk-3.6.0-py2.py3-none-any.whl", hash = "sha256:e1b257923a1ef88b8620dd3abff94dc5b3eee16ef37975d101ba9e60123ac3af"},
     {file = "slack_sdk-3.6.0.tar.gz", hash = "sha256:195f044e02a2844579a7a26818ce323e85dde8de224730c859644918d793399e"},
+]
+watchdog = [
+    {file = "watchdog-2.1.2-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:581e3548159fe7d2a9f377a1fbcb41bdcee46849cca8ab803c7ac2e5e04ec77c"},
+    {file = "watchdog-2.1.2-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:edcd9ef3fd460bb8a98eb1fcf99941e9fd9f275f45f1a82cb1359ec92975d647"},
+    {file = "watchdog-2.1.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d34ce2261f118ecd57eedeef95fc2a495fc4a40b3ed7b3bf0bd7a8ccc1ab4f8f"},
+    {file = "watchdog-2.1.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:668391e6c32742d76e5be5db6bf95c455fa4b3d11e76a77c13b39bccb3a47a72"},
+    {file = "watchdog-2.1.2-pp36-pypy36_pp73-macosx_10_9_x86_64.whl", hash = "sha256:6ef9fe57162c4c361692620e1d9167574ba1975ee468b24051ca11c9bba6438e"},
+    {file = "watchdog-2.1.2-pp37-pypy37_pp73-macosx_10_9_x86_64.whl", hash = "sha256:58ebb1095ee493008a7789d47dd62e4999505d82be89fc884d473086fccc6ebd"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_aarch64.whl", hash = "sha256:91387ee2421f30b75f7ff632c9d48f76648e56bf346a7c805c0a34187a93aab4"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_armv7l.whl", hash = "sha256:a6471517315a8541a943c00b45f1d252e36898a3ae963d2d52509b89a50cb2b9"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_i686.whl", hash = "sha256:a42e6d652f820b2b94cd03156c62559a2ea68d476476dfcd77d931e7f1012d4a"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_ppc64.whl", hash = "sha256:3d6405681471ebe0beb3aa083998c4870e48b57f8afdb45ea1b5957cc5cf1014"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_ppc64le.whl", hash = "sha256:598d772beeaf9c98d0df946fbabf0c8365dd95ea46a250c224c725fe0c4730bc"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_s390x.whl", hash = "sha256:4b219d46d89cfa49af1d73175487c14a318a74cb8c5442603fd13c6a5b418c86"},
+    {file = "watchdog-2.1.2-py3-none-manylinux2014_x86_64.whl", hash = "sha256:188145185c08c73c56f1478ccf1f0f0f85101191439679b35b6b100886ce0b39"},
+    {file = "watchdog-2.1.2-py3-none-win32.whl", hash = "sha256:255a32d44bbbe62e52874ff755e2eefe271b150e0ec240ad7718a62a7a7a73c4"},
+    {file = "watchdog-2.1.2-py3-none-win_amd64.whl", hash = "sha256:1a62a4671796dc93d1a7262286217d9e75823c63d4c42782912d39a506d30046"},
+    {file = "watchdog-2.1.2-py3-none-win_ia64.whl", hash = "sha256:104266a778906ae0e971368d368a65c4cd032a490a9fca5ba0b78c6c7ae11720"},
+    {file = "watchdog-2.1.2.tar.gz", hash = "sha256:0237db4d9024859bea27d0efb59fe75eef290833fd988b8ead7a879b0308c2db"},
 ]

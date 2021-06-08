@@ -9,6 +9,7 @@ python = "^3.9"
 slack-bolt = "^1.6.1"
 
 [tool.poetry.dev-dependencies]
+watchdog = {extras = ["watchmedo"], version = "^2.1.2"}
 
 [build-system]
 requires = ["poetry>=0.12"]
