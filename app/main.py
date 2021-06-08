@@ -8,6 +8,7 @@ app = App(token=os.environ["SLACK_BOT_TOKEN"])
 # Make sure app subscribes events you want to catch in Event Subscription page of your app setting
 @app.event("app_mention")
 def print_mention_event(event):
+    print("----------Yay! It worked!----------")
     print(event)
 
 
